@@ -2,24 +2,16 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App"> 
-      <User name= "Akshay" age={21} email= "akshay25599@gmail.com" />
-      <User />
-      <User />
-    </div>
-  );
-}
+  const age = 9;
+  const isGreen = true;
 
+return (
+<div className="App">
+  {age >=18 ? <h1>  OVER AGE</h1> : <h1> UNDER AGE</h1>}
+  <h1 style={{ color: isGreen ? "green" : "red" }}> THIS HAS color </h1>
 
-const User = (props) => {
-  return (
-    <div>
-      <h1> {props.name}</h1>
-      <h1> {props.age}</h1>
-      <h1> {props.email}</h1>
-    </div>
-  )
-
-}
+  {isGreen && <button> THIS IS A BUTTON</button>}
+</div>
+);
+  }
 export default App;
