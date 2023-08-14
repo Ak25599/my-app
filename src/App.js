@@ -1,21 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
-import { User } from './User'
 
 function App() {
-  const users = [
-    { name:"Akshay", age: 24},
-    { name:"Vino", age: 26},
-    { name:"Akash", age: 20},
-    { name:"Rubby", age: 20},
+  const planets = [
+    { name:"Mars", isGasPlanet: false },
+    { name:"Earth", isGasPlanet: false},
+    { name:"Jupiter", isGasPlanet: true},
+    { name:"Venus", isGasPlanet: false},
     ];
 
 return (
 <div className="App">
-  {users.map((user, key) => {
-    return <User name={user.name} age={user.age} />;
-  })
-  }
+  {planets.map(
+    (planet, key) =>  !planet.isGasPlanet && <h1> {planet.name}</h1>
+  )}
 </div>
 );
   }
