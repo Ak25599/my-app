@@ -3,15 +3,18 @@ import './App.css';
 import { useState } from "react"
 
 function App() {
-  const  [age, setAge] = useState(0);
-
-  const increaseAge = () => {
-    setAge(age + 1);
-  };
+  const [textColor, setTextColor] = useState("Black");
+  
   return (
     <div className="App">
-      {age}
-      <button onClick={increaseAge}> Increase Age </button>
+      <button
+      onClick={() => {
+        setTextColor(textColor === "black" ? "red" : "black");
+      }}
+      >
+        Show?Hide
+      </button>
+      <h1 style={{color: textColor}}> Hi My name is AK</h1>
     </div>
   );
   } 
