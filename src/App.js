@@ -1,7 +1,14 @@
-import logo from './logo.svg';
+
 import './App.css';
-import { useEffect, useState } from "react"
-import Axios from "axios";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Home } from "./pages/Home";
+import { Menu } from './pages/Menu';
+import { Contact } from './pages/Contact';
+
+
+function App() {
+function App() {
+  const [generatedEscuse, setGeneratedExcuse] = useState("")
 
 
 function App() {
@@ -23,11 +30,9 @@ function App() {
       <button  onClick={() => fetchExcuse("office")}> Office </button>
        
 
-       <p> {generatedEscuse} </p>
+        </Switch>
+      </Router>
       </div>
-
-
-  
   );
 } 
 
