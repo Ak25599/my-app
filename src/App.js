@@ -1,22 +1,29 @@
 
 import './App.css';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { Home } from "./pages/Home";
-import { Menu } from './pages/Menu';
+import { Profile } from './pages/Profile';
 import { Contact } from './pages/Contact';
+import { Navabar } from './Navbar';
+import { useState, createContext } from 'react';
+export const AppContext = createContext();
 
 function App() { 
+  const [username, setUsername] = useState("Akshay");
+
   return (
     <div className="App">
-     home screen 
+     <AppContext.Provider value={{ username, setUsername }}>
       <Router>
+      <Navabar />
       <Switch>
        <Route exact path="/"> <Home /> </Route> 
-       <Route exact path="/menu"> <Menu /> </Route>
+       <Route exact path="/profile"> <Profile /> </Route>
        <Route exact path="/contact"> <Contact /> </Route>
        <Route path="*"> <h1> PAGE NOT FOUND</h1> </Route> 
       </Switch>
       </Router>
+      </AppContext.Provider>
       </div>
   );
 } 
