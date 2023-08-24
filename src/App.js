@@ -5,32 +5,17 @@ import { Home } from "./pages/Home";
 import { Menu } from './pages/Menu';
 import { Contact } from './pages/Contact';
 
-
-function App() {
-function App() {
-  const [generatedEscuse, setGeneratedExcuse] = useState("")
-
-
-function App() {
-  const [generatedEscuse, setGeneratedExcuse] = useState("")
-
-  const fetchExcuse = (excuse) => {
-    Axios.get('https://excuser-three.vercel.app/v1/excuse/party/').then(
-      (res) => {
-        setGeneratedExcuse(res.data[0].excuse);
-      }
-    );
-  };
-  
+function App() { 
   return (
     <div className="App">
-      <h1> Generate An Excuse </h1>
-      <button onClick={() => fetchExcuse("party")}> Party</button>
-      <button onClick={() => fetchExcuse("family")}> Family</button>
-      <button  onClick={() => fetchExcuse("office")}> Office </button>
-       
-
-        </Switch>
+     home screen 
+      <Router>
+      <Switch>
+       <Route exact path="/"> <Home /> </Route> 
+       <Route exact path="/menu"> <Menu /> </Route>
+       <Route exact path="/contact"> <Contact /> </Route>
+       <Route path="*"> <h1> PAGE NOT FOUND</h1> </Route> 
+      </Switch>
       </Router>
       </div>
   );
