@@ -1,18 +1,22 @@
 import React from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Cat } from "./components/Cat"; // Import Cat as a named export
+import { useCount } from "./useCount";
 
-const App = () => {
-  const client = new QueryClient();
-
+function App() {
+  const { count, increase, decrease, restart } = useCount(120);
   return (
-    <QueryClientProvider client={client}>
-      <div className="App">
-        <Cat />
+    <div className="App">
+      {count}
+      <button onClick={increase}> increase</button>
+      <button onClick={decrease}> decrease</button>
+      <button onClick={restart}> restart</button>
       </div>
-    </QueryClientProvider>
+
   );
-};
+}
+
+ 
 
 export default App;
 
